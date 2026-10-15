@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monsoon: the rains, on schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="drift" id="drift"></div>
+<header class="hero">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <div class="flash" id="flash"></div>
+  <div class="hero-in">
+    <h1 aria-label="Monsoon" id="title"></h1>
+    <p>Every June the sea wind turns inland and a continent gets wet. Here is how it travels.</p>
+    <div class="ctl">
+      <label>Rainfall <input type="range" id="amt" min="40" max="700" value="260" aria-label="Rainfall intensity"></label>
+      <button id="thunder" style="font:1rem var(--disp);padding:.6rem 1.1rem;border-radius:99px;border:2px solid #f2b632;background:transparent;color:#f2b632;cursor:pointer">Call thunder</button>
+      <span class="hint">Move your pointer to tilt the wind.</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="s" id="journey">
+  <h2>One wind, six weeks, whole country</h2>
+  <p class="lead">The southwest monsoon follows a rough calendar. These are normal onset dates; real years run early or late. Scroll to follow it north.</p>
+  <div class="tl" id="tl">
+    <div class="fill" id="fill"></div>
+    <div class="stop"><time>around 1 June</time><h3>Kerala</h3><p>The official start. Rain hits the Malabar coast first and declares the season open.</p></div>
+    <div class="stop"><time>around 11 June</time><h3>Mumbai</h3><p>The Western Ghats force the wind upward, so the coast takes the heaviest water.</p></div>
+    <div class="stop"><time>around 10 June</time><h3>Kolkata</h3><p>A second branch comes up the Bay of Bengal and meets the east.</p></div>
+    <div class="stop"><time>around 27 June</time><h3>Delhi</h3><p>Both branches reach the plains. Dust, heat and then, at last, the smell of rain.</p></div>
+    <div class="stop"><time>around 8 July</time><h3>Whole country covered</h3><p>Then it retreats: withdrawal starts from the northwest in mid-September.</p></div>
+  </div>
+</section>
+
+<section class="s" id="chart">
+  <h2>Mumbai, month by month</h2>
+  <p class="lead">Rounded long-term averages in millimetres. July does most of the work. Tap a bar for the story.</p>
+  <div class="bars" id="bars">
+    <button class="bar" style="--h:62%;--d:0s" data-t="June: the onset. Short, violent bursts after weeks of heat."><b>520</b><i></i></button>
+    <button class="bar" style="--h:100%;--d:.15s" data-t="July: the peak. Days of steady rain, waterlogged streets, closed schools."><b>830</b><i></i></button>
+    <button class="bar" style="--h:65%;--d:.3s" data-t="August: still heavy, but with longer breaks between spells."><b>540</b><i></i></button>
+    <button class="bar" style="--h:41%;--d:.45s" data-t="September: the tail. Afternoon thunderstorms, then withdrawal."><b>340</b><i></i></button>
+  </div>
+  <div class="labels"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+  <p class="note" id="note" aria-live="polite">Choose a month.</p>
+</section>
+
+<section class="s" id="facts">
+  <h2>Small things the rain does</h2>
+  <p class="lead">Tap a card to turn it over.</p>
+  <div class="flip">
+    <button class="card" aria-pressed="false"><div><span><h3>Petrichor</h3><small>Tap to flip</small></span><span><small>The smell of first rain: oils released by soil and plants, plus a compound made by soil bacteria called geosmin.</small></span></div></button>
+    <button class="card" aria-pressed="false"><div><span><h3>Kharif crops</h3><small>Tap to flip</small></span><span><small>Rice, cotton, soybean and millet are sown with the rains. Farmers plan the year around onset day.</small></span></div></button>
+    <button class="card" aria-pressed="false"><div><span><h3>Cherrapunji</h3><small>Tap to flip</small></span><span><small>The hills of Meghalaya catch the Bay of Bengal branch and are among the wettest places on Earth.</small></span></div></button>
+  </div>
+</section>
+</main>
+<footer>Dates and rainfall are approximate averages for illustration.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
